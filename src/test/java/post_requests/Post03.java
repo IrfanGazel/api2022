@@ -16,7 +16,6 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class Post03 extends AgroMonitoringBaseUrl {
-
     /*
         Given
             1) "http://api.agromonitoring.com/agro/1.0/polygons?appid=f4ffe3b2ef1fcb3600ab1d7fbc88c2f0&duplicated=true"
@@ -104,19 +103,19 @@ public class Post03 extends AgroMonitoringBaseUrl {
 
         //4.Step: Do Assertions
         //1.Way:
-        //Map<String, Object> actualDataMap = response.as(HashMap.class);
+        Map<String, Object> actualDataMap = response.as(HashMap.class);
 
-        //assertEquals(requestBodyMap.get("name"), actualDataMap.get("name"));
-        //assertEquals(requestBodyMap.get("center"), actualDataMap.get("center"));
-        //assertEquals(requestBodyMap.get("area"), actualDataMap.get("area"));
-        //assertEquals(String.valueOf(requestBody.coordinates[0][0][0]), ((Map)((Map)actualDataMap.get("geo_json")).get("geometry")).get("coordinates").toString().substring(3, 12));
-        //assertEquals(requestBody.geometrySetUp().get("type"), ((Map)((Map)actualDataMap.get("geo_json")).get("geometry")).get("type"));
+        assertEquals(requestBodyMap.get("name"), actualDataMap.get("name"));
+        assertEquals(requestBodyMap.get("center"), actualDataMap.get("center"));
+        assertEquals(requestBodyMap.get("area"), actualDataMap.get("area"));
+        assertEquals(String.valueOf(requestBody.coordinates[0][0][0]), ((Map)((Map)actualDataMap.get("geo_json")).get("geometry")).get("coordinates").toString().substring(3, 12));
+        assertEquals(requestBody.geometrySetUp().get("type"), ((Map)((Map)actualDataMap.get("geo_json")).get("geometry")).get("type"));
 
         //2.Way:
         JsonPath json = response.jsonPath();
 
         assertTrue(json.get("geo_json.geometry.coordinates[0][0][0]").equals(requestBody.coordinates[0][0][0]));
-        //assertTrue(json.getFloat("geo_json.geometry.coordinates[0][0][0]")==requestBody.coordinates[0][0][0]);
+        assertTrue(json.getFloat("geo_json.geometry.coordinates[0][0][0]")==requestBody.coordinates[0][0][0]);
         assertTrue(json.getString("geo_json.geometry.type").equals(requestBody.geometrySetUp().get("type")));
         assertTrue(json.getString("geo_json.type").equals(requestBody.geo_jsonSetUp().get("type")));
         assertTrue(json.getJsonObject("geo_json.properties").equals(requestBody.geo_jsonSetUp().get("properties")));
@@ -127,7 +126,6 @@ public class Post03 extends AgroMonitoringBaseUrl {
         //To assert "area" value you can use both of the followings
         assertTrue(json.get("area").toString().equals(requestBodyMap.get("area").toString()));
         assertTrue(json.getDouble("area")==(Double)requestBodyMap.get("area"));
-
     }
 
 }

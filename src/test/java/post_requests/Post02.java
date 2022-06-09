@@ -13,7 +13,6 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 public class Post02 extends JsonPlaceHolderBaseUrl {
-
     /*
          Given
            1) https://jsonplaceholder.typicode.com/todos
@@ -54,7 +53,6 @@ public class Post02 extends JsonPlaceHolderBaseUrl {
         assertEquals(expectedDataMap.get("userId"), actualDataMap.get("userId"));
         assertEquals(expectedDataMap.get("title"), actualDataMap.get("title"));
         assertEquals(expectedDataMap.get("completed"), actualDataMap.get("completed"));
-
     }
 
 }

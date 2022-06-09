@@ -38,7 +38,7 @@ public class Get12Pojo extends HerOkuAppBaseUrl {
         spec.pathParams("first", "booking", "second", 2);
 
         //2.Step: Set the Expected Data
-        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2015-08-07", "2016-06-12");
+        BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2016-06-27", "2019-04-23");
         BookingPojo bookingPojo = new BookingPojo("Mary", "Brown", 227, true, bookingDatesPojo, "Breakfast");
 
         //3.Step: Send the GET Request and get the Response

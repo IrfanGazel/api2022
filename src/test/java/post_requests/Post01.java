@@ -13,7 +13,6 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 public class Post01 extends HerOkuAppBaseUrl {
-
     /*
         Given
            1) https://restful-booker.herokuapp.com/booking

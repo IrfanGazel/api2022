@@ -10,7 +10,6 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 public class Post04Pojo extends JsonPlaceHolderBaseUrl {
-
     /*
          Given
             https://jsonplaceholder.typicode.com/todos
@@ -33,7 +32,6 @@ public class Post04Pojo extends JsonPlaceHolderBaseUrl {
      */
     @Test
     public void postPojo01(){
-
         //1.Step: Set the URL
         spec.pathParam("first", "todos");
 
@@ -49,7 +47,6 @@ public class Post04Pojo extends JsonPlaceHolderBaseUrl {
         assertEquals(requestBody.getUserId(), actualBody.getUserId());
         assertEquals(requestBody.getTitle(), actualBody.getTitle());
         assertEquals(requestBody.getCompleted(), actualBody.getCompleted());
-
     }
 
 }

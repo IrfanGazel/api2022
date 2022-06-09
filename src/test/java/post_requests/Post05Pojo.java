@@ -12,7 +12,6 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 public class Post05Pojo extends HerOkuAppBaseUrl {
-
     /*
          Given
             https://restful-booker.herokuapp.com/booking

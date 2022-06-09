@@ -66,15 +66,13 @@ public class Get16 extends DummyRestApiBaseUrl {
    //    }
 
    //   2.way Better
-   //   int sum = salaryList.stream().reduce(0,(x,y)->(x+y));
+   //   int sum = salaryList.stream().reduce(0,(x,y)->(x+y)); //lambda expression
 
         //3.Way Best
-        int sum = salaryList.stream().reduce(0,Math::addExact);
+        int sum = salaryList.stream().reduce(0,Math::addExact); //method reference
 
         assertEquals(6644770,sum);
     }
-
-
 }
 
 
